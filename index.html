@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: radial-gradient(#999, #333);
+            color: rgb(76, 0, 0);
+        }
+        .output {
+            color:white;
+            margin-left: 1vw;
+            line-height: 4.5vh;
+        }
+    </style>
     <title>Found Footage</title>
 </head>
 <body>
@@ -13,5 +24,27 @@
     <p>
         gaming
     </p>
+    <div style="background-color: black; width: 60vw; height: max-content; border: outset;">
+        <p id="output8" class="output">></p>
+        <p id="output7" class="output">></p>
+        <p id="output6" class="output">></p>
+        <p id="output5" class="output">></p>
+        <p id="output4" class="output">></p>
+        <p id="output3" class="output">></p>
+        <p id="output2" class="output">></p>
+        <p id="output1" class="output">></p>
+        <input type="text" style="color: white; background-color: black; border: outset; border-width: 1px; margin-left: 1vw;" id="input">
+    </div>
+    <script>
+        /* @SoapInACup smells bad */
+        /** @type {String} */
+        document.getElementById('input').addEventListener("keydown", (e) => {
+            if (e.key == "Enter") {
+                const input = document.getElementById('input').value;
+                document.getElementById('output1').innerHTML = '> ' + document.getElementById('input').value;
+                document.getElementById('input').value = 0;
+            }
+        })
+    </script>
 </body>
 </html>
